@@ -49,57 +49,7 @@ width:100%;
 
 </style>
 
-<div id="survey" class="modal fade" data-backdrop="static">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Do you want to help us further?</h4>
-      </div>
-      <div class="modal-body">
-          <p>
-              Thank you for contributing one task for the project. 
-              We are interested in knowing how you found out about us.
-          </p>
-          <p>
-              Could you please answer two questions in a short survey?
-          </p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Skip</button>
-        <a class="btn btn-large btn-success" href="https://docs.google.com/forms/d/1Foe1CCfd4K_ZmtX2W8MDsoSjjDi5zd5DLgG7yRVn2HQ/viewform?embedded=true">Of course! Take me to the survey!</a>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
 
-
-<div id="survey25" class="modal fade" data-backdrop="static">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">
-            Congratulations! You have completed 25 tasks!
-        </h4>
-      </div>
-      <div class="modal-body">
-          <p>
-              Thank you for contributing 25 tasks for the project. Now that you 
-              have been using MicroPasts for a while, we would like to know how 
-              you found it.
-          </p>
-          <p>
-              Could you please answer a few questions in a short survey?
-          </p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Skip</button>
-        <a class="btn btn-large btn-success" href="https://docs.google.com/forms/d/1WTVapZ2Qdq0AIRazG-onDrVYDtb9xAnid7LwLrR3Uqw/viewform?embedded=true">Of course! Take me to the survey!</a>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
 
 
 <div style="display:none;margin-top:15px; height:500px;" id="oldbrowser" class="row">
@@ -180,166 +130,89 @@ width:100%;
             
             <!-- Object type form control --> 
             <div class="form-group">
-                <label class="control-label" for="objectType">Object Type</label>
-                <input class="form-control" type="text" name="objectType" placeholder="Top of card">
+                <label class="control-label" for="accessionNo">Accession No.</label>
+                <input class="form-control" type="text" name="accessionNo" placeholder="Top left of card">
             </div>
             <!-- End of object type form control -->
-            
-            <!-- Date of discovery group -->
-            <div class="form-group">
-                <label class="control-label inp" for="dateDiscoveryYear">Date of Discovery</label>
-                <div class="controls">
-                    <!-- Year --> 
-                    <div class="col-xs-4">
-                        <select class="form-control" name="dateDiscoveryYear"></select>
-                    </div>
-                    <!-- Month --> 
-                    <div class="col-xs-4">
-                        <select class="form-control" name="dateDiscoveryMonth"></select>
-                    </div>
-                    <!-- Day --> 
-                    <div class="col-xs-4">
-                        <select class="form-control" name="dateDiscoveryDay"></select>
-                    </div>
-                </div>
-            </div>
-            <!-- End of date of discovery group --> 
 
             <!-- Right corner -->     
             <div class="form-group">
-                <label class="control-label" for="rightCorner">Right Corner</label>
-                <textarea class="form-control"  rows="5" name="rightCorner" placeholder="Right Corner"></textarea>
+                <label class="control-label" for="specimenNo">Specimen No</label>
+                <input class="form-control" type="text" name="specimenNo" placeholder="Left of card">
             </div>
 
+             <div class="form-group">
+                <label class="control-label" for="fieldNo">Field No</label>
+                <input class="form-control" type="text" name="fieldNo" placeholder="Left of card">
+            </div>
+
+             <div class="form-group">
+                <label class="control-label" for="negativeNo">Negative No</label>
+                <input class="form-control" type="text" name="negativeNo" placeholder="Left of card">
+            </div>
             <hr />
             
-             <!-- National grid reference -->     
-            <div class="form-group">
-                <label class="control-label" for="gridRef">Grid Reference</label>
-                <input type="text" name="gridRef" class="form-control" placeholder="Top left of card">
+              <div class="form-group">
+                <label class="control-label" for="receivedFrom">Received From</label>
+                <input class="form-control" type="text" name="receivedFrom" placeholder="Center of Card">
             </div>
 
-            <!-- Geographical grouping --> 
-            <div class="form-group">
-                <label class="control-label" for="site">Site</label>
-                <textarea name="site" type="text" class="form-control" placeholder="Left of the card"></textarea>
-                <div class="input-append">
-                    <label class="control-label" for="site">Georeference the site</label>
-                    <input type="text" class="form-control" id="toSearch" name="toSearch" placeholder="Geolocate the site in a map"></input>
-                    <button id="searchBtn" class="btn btn-answer" value="search" type="button"><i class="icon-search"></i> Search</button>
+             <div class="form-group">
+                <label class="control-label" for="collectedBy">Collected By</label>
+                <input class="form-control" type="text" name="collectedBy" placeholder="Center of card">
+            </div>
 
-<input type="hidden" name="lat" value="" id="lat">
-                <input type="hidden" name="lon" value="" id="lon">
-                </div>
-                
-                <div style="display:none;margin-top:15px;" id="searching" class="alert alert-info">
-                    <img src="/static/img/loading.gif"> Searching...
-                </div>
-                
-                <div style="display:none;margin-top:15px;" id="searchingError" class="alert alert-warning">
-                    <strong>Location not found</strong>. If you know where it is approximately, please drag and drop the icon <img style="width:16px;" src="http://img225.imageshack.us/img225/5237/youarehere2.png"/> in the map.
-                </div>
+             <div class="form-group">
+                <label class="control-label" for="collectedDate">Date</label>
+                <input class="form-control" type="text" name="collectedDate" placeholder="Center of card">
+            </div>
+
+             <div class="form-group">
+                <label class="control-label" for="locality">Locality</label>
+                <input class="form-control" type="text" name="locality" placeholder="Center of card">
+            </div>
+
+             <div class="form-group">
+                <label class="control-label" for="culture">Culture</label>
+                <input class="form-control" type="text" name="culture" placeholder="Center of card">
+            </div>
+
+             <div class="form-group">
+                <label class="control-label" for="period">Period</label>
+                <input class="form-control" type="text" name="period" placeholder="Center of card">
+            </div>
+
+             <div class="form-group">
+                <label class="control-label" for="object">Object</label>
+                <input class="form-control" type="text" name="object" placeholder="Center of card">
+            </div>
+
+             <div class="form-group">
+                <label class="control-label" for="specimenNo">Specimen No</label>
+                <input class="form-control" type="text" name="specimenNo" placeholder="Center of card">
+            </div>
+
+             <div class="form-group">
+                <label class="control-label" for="acquisition">Gift</label>
+                <input class="form-control" type="radio" name="acquistion"  value="gift">
                  
-                <div id="searchingTip" class="alert alert-info" style="display:none; margin-top:10px;">
-                    Drag & drop the <img style="width:16px;" src="http://img225.imageshack.us/img225/5237/youarehere2.png"/> to improve the location
-                </div>
-                
-                <div id="map" style="margin-top:15px;">
-                    
-                </div>
-
+                 <label class="control-label" for="acquisition">Purchase</label>
+                <input class="form-control" type="radio" name="acquistion"  value="purchase">
+                 
+                 <label class="control-label" for="acquisition">Exchange</label>
+                <input class="form-control" type="radio" name="acquistion"  value="exchange">
             </div>
-            <!-- End of geo group --> 
-
-           
             
-            <!-- The collection --> 
-            <div class="form-group">
-                <label class="control-label" for="collection">Collection</label>
-                <textarea name="collection" rows="5" class="form-control" placeholder="Right of card"></textarea>
+             <div class="form-group">
+                <label class="control-label" for="dateReceived">Date Recieved</label>
+                <input class="form-control" type="text" name="dateReceived" placeholder="Center of card">
             </div>
 
-            <hr />
 
-            <!-- The publications cited --> 
-            <div class="form-group">
-                <label class="control-label" for="publications">Publications</label>
-                <textarea rows="5" class="form-control" name="publications" placeholder="Centre of card"></textarea>
-            </div>
-
-            <hr />
-
-            <!-- Length in mm --> 
-            <div class="form-group">
-                <label class="control-label" for="length">Length</label>
-                <input class="form-control" type="text" name="length" placeholder="In millimetres">
-            </div>
-
-            <!-- Width -->
-            <div class="form-group">
-                <label class="control-label" for="width">Width</label>
-                <input class="form-control"  type="text" name="width" placeholder="In millimetres">
-            </div>
-
-            <!-- Edge --> 
-            <div class="form-group">
-                <label class="control-label" for="edge">Edge</label>
-                <input class="form-control"  type="text" name="edge" placeholder="In millimetres">
-            </div>
-
-            <!-- Thickness --> 
-            <div class="form-group">
-                <label class="control-label" for="thickness">Thickness</label>
-                <input class="form-control"  type="text" name="thickness" placeholder="In millimetres">
-            </div>
-
-            <!-- Weight -->
-            <div class="form-group">
-                <label class="control-label" for="weight">Weight</label>
-                <input class="form-control"  type="text" name="weight" placeholder="In grammes">
-            </div>
-
-            <!-- The composition of the object --> 
-            <div class="form-group">
-                <label class="control-label" for="composition">Composition</label>
-                <input class="form-control"  type="text" name="composition" placeholder="Below measurements">
-            </div>
-
-            <!-- The description of the object --> 
-            <div class="form-group">
-                <label class="control-label" for="description">Description</label>
-                <textarea type="text" rows="5" name="description" placeholder="Below measurements" class="form-control" ></textarea>
-            </div>
-
-            <!-- The surface of the object --> 
-            <div class="form-group">
-                <label class="control-label" for="surface">Surface</label>
-                <input class="form-control"  type="text" name="surface" placeholder="Left of card">
-            </div>
-
-            <!-- The patina of the object --> 
-            <div class="form-group">
-                <label class="control-label" for="patina">Patina</label>
-                <input class="form-control"  type="text" name="patina" placeholder="Towards bottom left of card">
-            </div>
-
-            <hr />
-
-            <!-- Associations for the object --> 
-            <div class="form-group">
-                <label class="control-label" for="associations">Associations</label>
-                <input class="form-control"  type="text" name="associations" placeholder="Bottom centre of card">
-            </div>
-
-            <hr />
-
-            <!-- Remarks --> 
-            <div class="form-group">
-                <label class="control-label" for="remarks">Remarks</label>
-                <textarea class="form-control" rows="5"  name="remarks" placeholder="Bottom centre of card"></textarea>
-            </div>
-
-            <hr />
+            
+          
+         
+           
 
             <!-- Transcriber's comments --> 
             <div class="form-group">
@@ -393,7 +266,7 @@ width:100%;
     <div class="modal-content">
 	<!-- Modal header --> 
 		<div class="modal-header">
-                <h3 class="lead">BM Bronze Age Index BAI-draw transcription tutorial</h3>
+                <h3 class="lead">BM Bronze Age Index DenverAnthro transcription tutorial</h3>
             </div>
 	<!-- stepped modal body -->
 		<div id="0" class="modal-body" style="display:none">
@@ -544,17 +417,10 @@ Modernizr.load({
 <!-- The main pybossa functions --> 
 <script>
 function loadUserProgress() {
-    pybossa.userProgress('BAI-draw').done(function(data){
+    pybossa.userProgress('DenverAnthro').done(function(data){
         console.log(data);
         console.log("Total answers done for user: " + data.done);
-        if ((data.done == 1) && ($.cookie('surveyBAI-draw') === undefined)){
-           $("#survey").modal('show');
-           $.cookie('surveyBAI-draw', 'shown', { path: '/'});
-        }
-        if ((data.done == 25) && ($.cookie('survey25BAI-draw') === undefined)){
-           $("#survey25").modal('show');
-           $.cookie('survey25BAI-draw', 'shown', { path: '/'});
-        }
+        
         var pct = Math.round((data.done*100)/data.total);
         $("#progress").css("width", pct.toString() +"%");
         $("#progress").attr("title", pct.toString() + "% completed!");
@@ -823,7 +689,7 @@ pybossa.presentTask(function(task, deferred) {
 });
 
 if(Modernizr.borderradius) {
-    pybossa.run('BAI-draw');
+    pybossa.run('DenverAnthro');
 }
 else {
     $(".skeleton").hide();
