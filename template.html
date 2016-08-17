@@ -134,15 +134,17 @@
                 <div class="form-group">
                 <label class="control-label" for="negativeNo">Negative No</label>
                 <input class="form-control" type="text" name="negativeNo" placeholder="Left of card">
+
+                <div class="form-group">
+                <label class="control-label" for="receivedFrom">Received From</label>
+                <input class="form-control" type="text" name="receivedFrom" placeholder="Center of Card">
+            </div>
+
             </div>
 
             </div>
 
             <div class="col-md-4">
-                <div class="form-group">
-                <label class="control-label" for="receivedFrom">Received From</label>
-                <input class="form-control" type="text" name="receivedFrom" placeholder="Center of Card">
-            </div>
 
              <div class="form-group">
                 <label class="control-label" for="collectedBy">Collected By</label>
@@ -185,14 +187,14 @@
             </div>
 
              <div class="form-group">
-                <label class="control-label" for="acquisition">Gift</label>
-                <input class="form-control" type="radio" name="acquistion"  value="gift">
+                <label class="radio-inline" for="acquisition">Gift</label>
+                <input class="radio" type="radio" name="acquistion"  value="gift">
 
-                 <label class="control-label" for="acquisition">Purchase</label>
-                <input class="form-control" type="radio" name="acquistion"  value="purchase">
+                 <label class="radio-inline" for="acquisition">Purchase</label>
+                <input class="radio" type="radio" name="acquistion"  value="purchase">
 
-                 <label class="control-label" for="acquisition">Exchange</label>
-                <input class="form-control" type="radio" name="acquistion"  value="exchange">
+                 <label class="radio-inline" for="acquisition">Exchange</label>
+                <input class="radio" type="radio" name="acquistion"  value="exchange">
             </div>
 
              <div class="form-group">
@@ -294,7 +296,7 @@
             <div class="modal-footer">
                 <a id="prevBtn" href="#" onclick="showStep('prev')" class="btn btn-default">Previous</a>
                 <a id="nextBtn" href="#" onclick="showStep('next')" class="btn btn-success">Next</a>
-                <a id="startContrib" href="../DenverAnthro/newtask" class="btn btn-primary" style="display:none"><i class="glyphicon glyphicon-thumbs-up"></i> Let's start!</a>
+                <a id="startContrib" href="#" class="btn btn-primary" style="display:none"><i class="glyphicon glyphicon-thumbs-up"></i> Let's start!</a>
             </div>
       </div>
   </div>
