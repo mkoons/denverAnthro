@@ -202,13 +202,11 @@
 
 
             <!-- Transcriber's comments -->
-        <div class="col-md-12"  >
             <div class="form-group">
                 <label class="control-label" for="other">Transcriber's Comments</label>
                 <textarea class="form-control" rows="5"  name="other" placeholder="Add here your comments, if you have any."></textarea>
             </div>
             </div>
-
 
 
 
@@ -369,8 +367,8 @@ pybossa.taskLoaded(function(task, deferred) {
             deferred.resolve(task);
         });
         img.attr('src', task.info.url_b);
-        img.attr('width', '50%');
-        img.attr('height', '50%');
+        img.attr('width', '75%');
+        img.attr('height', '75%');
         img.addClass('img-polaroid');
         img.css("cursor", "zoom-in");
         task.info.image = img;
