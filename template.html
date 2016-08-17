@@ -409,62 +409,24 @@ pybossa.presentTask(function(task, deferred) {
         $('.btn-answer').off('click').on('click', function(evt) {
             evt.preventDefault();
             var answer = $(evt.target).attr("value");
-            if (typeof answer !== 'undefined') {
-                console.log(answer);
-                if (answer === 'search') {
-                    $("#searching").show();
-                    search(task, $("#toSearch").val(), 15);
-                } else {
-                    task.answer = $("#transcription").serializeJSON();
+           if (typeof answer != 'undefined') {
+                    task.answer = $("#excavationData").serializeJSON();
                     console.log(task.answer);
-                   if($('#lon').val()) {
-                   var geojson = {
-                       "geometry": {
-                            "type": "Point",
-                            "coordinates": [
-                                        $('#lon').val(),
-                                        $('#lat').val()
-                                ]
-                        },
-                        "crs": {
-                          "type": "name",
-                          "properties": {
-                            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
-                          }
-                        },
-                        "type": "Feature",
-                        "properties": {
-
-                        }
-                   };
-                   console.log(geojson);
-                    task.answer.geojson = geojson;
-                }
-                    task.answer.toSearch = task.answer.toSearch.replace(/\n/g,', ');
-                    task.answer.site = task.answer.site.replace(/\r\n/g,', ');
-                    console.log(task.answer);
-                    
                     pybossa.saveTask(task.id, task.answer).done(function() {
-                        $("#map_" + task.id).hide();
-                        $("#img_" + task.id).hide();
-                        //$('#img_task_' + task.id).trigger('wheelzoom.reset');
                         $("html, body").animate({ scrollTop: 0 }, "slow");
-                        $("#success").fadeIn(500).fadeOut(5500);
-                        $("#loading").fadeIn(500).fadeOut(1000);
+                        $("#success").fadeIn(500).fadeOut(500);
+                        $("#loading").fadeIn(500).fadeOut(500);
+                        // The line below resets the form when next loading a task
+                        $('.fields').val('');
+                        $('input:checkbox').removeAttr('checked');
                         deferred.resolve();
                     });
-                    $("#loading").fadeIn(500);
-                    
+                } else {
+                    $("#error").show();
                 }
+            });
+            $("#loading").hide();
             } else {
-                console.log(answer);
-                console.log(typeof(answer));
-                $("#error").show();
-            }
-        });
-        $("#loading").hide();
-    }
-    else {
         $(".skeleton").hide();
         $("#loading").hide();
         $("#finish").fadeIn(500);
