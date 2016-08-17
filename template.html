@@ -94,7 +94,21 @@
 </div>
 
 <div class="row skeleton">
-
+ <div id="photo-link" class="row">
+        <!-- Start of Photo DIV (column) -->
+        <div id="imgHolder" data-spy="affix" data-offset-top="1" data-offset-bottom="550">
+            <div class="btn-group">
+                <a class="btn btn-info btn-sm" href="#" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-eye-open"></i> Tutorial</a>
+		<a class="btn btn-info btn-sm" id="imgLink" target="_blank" data-toggle="tooltip" data-placement="top" title="Opens in a new window"  href="http://community.micropasts.org/category/crowdsourcing-support"><i class="glyphicon glyphicon-book"></i> Community Help</a>
+		<a id="raw" href="" class="btn btn-sm btn-info fancybox" ><i class="glyphicon glyphicon-picture"></i> Overlay</a>
+	        <a id="flickr" rel="tooltip" target="_blank" data-toggle="tooltip" data-placement="top" title="Opens in a new window" href="" class="btn btn-sm btn-info"><i class="icon icon-flickr"></i> View on flickr</a>
+        	<a id="down" rel="tooltip" data-toggle="tooltip" data-placement="top" title="Only works for compliant browsers" download="" href="" class="btn btn-sm btn-info" ><i class="glyphicon glyphicon-download"></i> Download</a>
+            </div>
+            <!-- The container for the zoomer -->
+            <div id="imgContainer"></div>
+            <div id="taskImg"></div>
+        </div><!-- End of Photo DIV (columnt) -->
+    </div>
     <div id="questions" class="col-md-4"><!-- Start of Question and Submission DIV (column) -->
 
         <!-- If the user clicks this button, the saved answer will be value="yes"-->
@@ -221,21 +235,7 @@
     
     <!-- The column holding the open layers div --> 
     
-    <div id="photo-link" class="col-md-7 col-md-offset-1">
-        <!-- Start of Photo DIV (column) -->
-        <div id="imgHolder" data-spy="affix" data-offset-top="1" data-offset-bottom="550">
-            <div class="btn-group">
-                <a class="btn btn-info btn-sm" href="#" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-eye-open"></i> Tutorial</a>
-		<a class="btn btn-info btn-sm" id="imgLink" target="_blank" data-toggle="tooltip" data-placement="top" title="Opens in a new window"  href="http://community.micropasts.org/category/crowdsourcing-support"><i class="glyphicon glyphicon-book"></i> Community Help</a>
-		<a id="raw" href="" class="btn btn-sm btn-info fancybox" ><i class="glyphicon glyphicon-picture"></i> Overlay</a>
-	        <a id="flickr" rel="tooltip" target="_blank" data-toggle="tooltip" data-placement="top" title="Opens in a new window" href="" class="btn btn-sm btn-info"><i class="icon icon-flickr"></i> View on flickr</a>
-        	<a id="down" rel="tooltip" data-toggle="tooltip" data-placement="top" title="Only works for compliant browsers" download="" href="" class="btn btn-sm btn-info" ><i class="glyphicon glyphicon-download"></i> Download</a>
-            </div>
-            <!-- The container for the zoomer --> 
-            <div id="imgContainer"></div>
-            <div id="taskImg"></div>
-        </div><!-- End of Photo DIV (columnt) -->
-    </div>
+
 
 </div><!-- End of Skeleton Row -->
 
