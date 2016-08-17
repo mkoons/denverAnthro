@@ -124,7 +124,13 @@ width:100%;
 <div class="row skeleton">
 
     <div id="questions" class="col-md-4"><!-- Start of Question and Submission DIV (column) -->
-
+           <div class="col-md-6">
+            <div id="imgContainer">
+             <span id="photo-link">
+                <img id="photo" src="/static/img/loading.gif" class="loadingIcon">
+             </span>
+            </div>
+        </div>
         <!-- If the user clicks this button, the saved answer will be value="yes"-->
         <form id="transcription" role="form">
             
@@ -431,140 +437,13 @@ function loadUserProgress() {
 }
 </script>
 
-<script>
-var geocoder;
-var map;
-var marker;
-    
-function initialize(){
-//MAP
-  var latlng = new google.maps.LatLng(54, -2);
-  var options = {
-    zoom: 4,
-    center: latlng,
-    mapTypeId: google.maps.MapTypeId.TERRAIN
-  };
-        
-  map = new google.maps.Map(document.getElementById("map"), options);
-        
-  //GEOCODER
-  geocoder = new google.maps.Geocoder();
-        
-  marker = new google.maps.Marker({
-    map: map,
-    draggable: true
-  });
-				
-}
-		
-$(document).ready(function() { 
-         
-  initialize();
-				  
-  $(function() {
-    $("#toSearch").autocomplete({
-      //This bit uses the geocoder to fetch address values
-      source: function(request, response) {
-        geocoder.geocode( {'address': request.term }, function(results, status) {
-          response($.map(results, function(item) {
-            return {
-              label:  item.formatted_address,
-              value: item.formatted_address,
-              latitude: item.geometry.location.lat(),
-              longitude: item.geometry.location.lng()
-            }
-          }));
-        })
-      },
-      //This bit is executed upon selection of an address
-      select: function(event, ui) {
-        $("#lat").val(ui.item.latitude);
-        $("#lon").val(ui.item.longitude);
-        var location = new google.maps.LatLng(ui.item.latitude, ui.item.longitude);
-        console.log('Latitude: ' + ui.item.latitude);
-        console.log('Longitude: ' + ui.item.longitude);
-        marker.setPosition(location);
-        map.setCenter(location);
-      }
-    });
-  });
-	
-  //Add listener to marker for reverse geocoding
-  google.maps.event.addListener(marker, 'drag', function() {
-    geocoder.geocode({'latLng': marker.getPosition()}, function(results, status) {
-      if (status == google.maps.GeocoderStatus.OK) {
-        if (results[0]) {
-          $('#toSearch').val(results[0].formatted_address);
-          $('#lat').val(marker.getPosition().lat());
-          $('#lon').val(marker.getPosition().lng());
-          console.log('Longitude: ' + marker.getPosition().lng());
-          console.log('Latitude: ' + marker.getPosition().lat());
-        }
-      }
-    });
-  });
-  
-});  
-</script>
+
 <script>
 pybossa.taskLoaded(function(task, deferred) {
     if ( !$.isEmptyObject(task) ) {
-        var img = $('<img />');
-        var div_map = $('<div/>');
-        
-        div_map.css("height", "390px");
-        div_map.css("width", "600px");
-        div_map.css("background", "#000");
-
-        var copyright = "&copy; <a href='" + task.info.link + "'>British Museum</a>";
-
-        var extent = new OpenLayers.Bounds();
-        extent.extend(new OpenLayers.LonLat(1.758939,58.672231).transform(new OpenLayers.Projection("EPSG:4326"),
-        new OpenLayers.Projection('EPSG:900913')));
-        
-        extent.extend(new OpenLayers.LonLat(-6.99745,49.96112).transform(new OpenLayers.Projection("EPSG:4326"),
-        new OpenLayers.Projection('EPSG:900913')));
-
-
-        $("#imgContainer").append(div_map);
-        div_map.attr("id", "img_" + task.id);
-
-        task.pixelProjection = new ol.proj.Projection({
-          code: 'pixel',
-          units: 'pixels',
-          extent: [0, 0, 1024, 720]
-        });
-
-        task.map_img = new ol.Map({
-          //interactions: ol.interaction.defaults().extend([task.select, task.modify]),
-          layers: [
-            new ol.layer.Image({
-              source: new ol.source.ImageStatic({
-                attributions: [
-                  new ol.Attribution({
-                    html: copyright
-                  })
-                ],
-                url: task.info.url_b,
-                imageSize: [1024, 720],
-                projection: task.pixelProjection,
-                imageExtent: task.pixelProjection.getExtent()
-              })
-            })
-          ],
-          renderer: 'canvas',
-          target: 'img_' + task.id,
-          view: new ol.View({
-            projection: task.pixelProjection,
-            center: ol.extent.getCenter(task.pixelProjection.getExtent()),
-            zoom: 1.0
-          })
-        });
-        div_map.css("display", "none");
-
 
         // load image from flickr
-        var img = $('<img />');
+        var img = $('<img width="100%" style="height:auto;"/>');
         img.attr("id", "img_task_" + task.id);
         img.load(function() {
             // continue as soon as the image is loaded
@@ -576,8 +455,6 @@ pybossa.taskLoaded(function(task, deferred) {
         img.addClass('img-polaroid');
         img.css("cursor", "zoom-in");
         task.info.image = img;
-
-        
         }  else {
             deferred.resolve(task);
         }
