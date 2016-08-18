@@ -372,8 +372,8 @@ pybossa.taskLoaded(function(task, deferred) {
             deferred.resolve(task);
         });
         img.attr('src', task.info.url_b);
-        img.attr('width', '50%');
-        img.attr('height', '50%');
+        img.attr('width', '100%');
+        img.attr('height', '100%');
         img.addClass('img-polaroid');
         img.css("cursor", "zoom-in");
         task.info.image = img;
