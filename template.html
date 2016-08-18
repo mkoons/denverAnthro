@@ -96,7 +96,7 @@
 <div class="row skeleton">
  <div id="photo-link" class="row">
         <!-- Start of Photo DIV (column) -->
-        <div id="imgHolder" data-spy="affix" data-offset-top="1" data-offset-bottom="550">
+        <div id="imgHolder" data-spy="affix" data-offset-top="1" data-offset-bottom="550" class="col-md-8">
             <div class="btn-group">
                 <a class="btn btn-info btn-sm" href="#" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-eye-open"></i> Tutorial</a>
 		<a class="btn btn-info btn-sm" id="imgLink" target="_blank" data-toggle="tooltip" data-placement="top" title="Opens in a new window"  href="http://community.micropasts.org/category/crowdsourcing-support"><i class="glyphicon glyphicon-book"></i> Community Help</a>
@@ -108,6 +108,35 @@
             <div id="imgContainer"></div>
             <div id="taskImg"></div>
         </div><!-- End of Photo DIV (columnt) -->
+         <div class="col-md-4">
+                <!-- Object type form control -->
+                <div class="form-group">
+                    <label class="control-label" for="accessionNo">Accession No.</label>
+                    <input class="form-control" type="text" name="accessionNo" placeholder="Top left of card">
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="specimenNo">Specimen No</label>
+                    <input class="form-control" type="text" name="specimenNo" placeholder="Left of card">
+                </div>
+
+                 <div class="form-group">
+                    <label class="control-label" for="fieldNo">Field No</label>
+                    <input class="form-control" type="text" name="fieldNo" placeholder="Left of card">
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="negativeNo">Negative No</label>
+                    <input class="form-control" type="text" name="negativeNo" placeholder="Left of card">
+                </div>
+                <div class="form-group">
+                <label class="control-label" for="receivedFrom">Received From</label>
+                <input class="form-control" type="text" name="receivedFrom" placeholder="Center of Card">
+            </div>
+
+            </div>
+
+
     </div>
     <div id="questions" class="col-md-12"><!-- Start of Question and Submission DIV (column) -->
 
