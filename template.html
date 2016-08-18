@@ -31,14 +31,14 @@
             Browser problems!
         </h2>
         <p>
-            Sorry, but your browser does not support the current application. 
-            If you want to contribute, please, upgrade to a modern web browser 
-            like the open source and free alternative 
-            <a href="http://www.mozilla.org/en-US/firefox/new/">Firefox</a> or 
+            Sorry, but your browser does not support the current application.
+            If you want to contribute, please, upgrade to a modern web browser
+            like the open source and free alternative
+            <a href="http://www.mozilla.org/en-US/firefox/new/">Firefox</a> or
             <a href="https://www.google.com/intl/en/chrome/browser/">Chrome</a>.
         </p>
     </div>
-</div> 
+</div>
 <!-- End of Row -->
 
 <div style="margin-top:15px;">
@@ -54,7 +54,7 @@
     <div id="finish" class="alert alert-success" style="display:none;">
         <h2>
             Congratulations!
-        </h2> 
+        </h2>
         <p>
             You have participated in <strong>all</strong> available tasks! Thank you for your interest and help.
         </p>
@@ -68,7 +68,7 @@
 
     <div id="error" class="alert alert-error" style="display:none;">
         <a class="close">X.</a>
-        <strong>Error!</strong> Something went wrong, please contact the site 
+        <strong>Error!</strong> Something went wrong, please contact the site
         administrators via the forum, Twitter, email or our Facebook page.
     </div>
 </div> <!-- End Success and Error Messages for the user -->
@@ -81,158 +81,131 @@
 -->
 
 <!-- Start Skeleton Row-->
-<div class="row skeleton"> 
+<div class="row skeleton">
 
-        <h1 id="start">
-            Please transcribe this index card
-        </h1> 
-    
+    <h1 id="start">
+        Please transcribe this index card
+    </h1>
+
     <!-- The question will be loaded here -->
-    
+
     <span class="label label-info">Note</span> You can use your mouse wheel track-pad to zoom in/out the picture, as well as drag & drop to navigate in the document.
 
 </div>
 
 <div class="row skeleton">
- <div id="photo-link" class="row">
+</div>
+<div id="questions" class="col-md-12"><!-- Start of Question and Submission DIV (column) -->
+
+    <!-- If the user clicks this button, the saved answer will be value="yes"-->
+    <form id="transcription" role="form">
+    <div id="photo-link" class="row">
         <!-- Start of Photo DIV (column) -->
-        <div id="imgHolder" data-spy="affix" data-offset-top="1" data-offset-bottom="550" class="col-md-8">
+        <div id="imgHolder" class="col-md-8">
             <div class="btn-group">
                 <a class="btn btn-info btn-sm" href="#" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-eye-open"></i> Tutorial</a>
-		<a class="btn btn-info btn-sm" id="imgLink" target="_blank" data-toggle="tooltip" data-placement="top" title="Opens in a new window"  href="http://community.micropasts.org/category/crowdsourcing-support"><i class="glyphicon glyphicon-book"></i> Community Help</a>
-		<a id="raw" href="" class="btn btn-sm btn-info fancybox" ><i class="glyphicon glyphicon-picture"></i> Overlay</a>
-	        <a id="flickr" rel="tooltip" target="_blank" data-toggle="tooltip" data-placement="top" title="Opens in a new window" href="" class="btn btn-sm btn-info"><i class="icon icon-flickr"></i> View on flickr</a>
-        	<a id="down" rel="tooltip" data-toggle="tooltip" data-placement="top" title="Only works for compliant browsers" download="" href="" class="btn btn-sm btn-info" ><i class="glyphicon glyphicon-download"></i> Download</a>
+                <a class="btn btn-info btn-sm" id="imgLink" target="_blank" data-toggle="tooltip" data-placement="top" title="Opens in a new window"  href="http://community.micropasts.org/category/crowdsourcing-support"><i class="glyphicon glyphicon-book"></i> Community Help</a>
+                <a id="raw" href="" class="btn btn-sm btn-info fancybox" ><i class="glyphicon glyphicon-picture"></i> Overlay</a>
+                <a id="flickr" rel="tooltip" target="_blank" data-toggle="tooltip" data-placement="top" title="Opens in a new window" href="" class="btn btn-sm btn-info"><i class="icon icon-flickr"></i> View on flickr</a>
+                <a id="down" rel="tooltip" data-toggle="tooltip" data-placement="top" title="Only works for compliant browsers" download="" href="" class="btn btn-sm btn-info" ><i class="glyphicon glyphicon-download"></i> Download</a>
             </div>
             <!-- The container for the zoomer -->
             <div id="imgContainer"></div>
             <div id="taskImg"></div>
         </div><!-- End of Photo DIV (columnt) -->
-         <div class="col-md-4">
-                <!-- Object type form control -->
-                <div class="form-group">
-                    <label class="control-label" for="accessionNo">Accession No.</label>
-                    <input class="form-control" type="text" name="accessionNo" placeholder="Top left of card">
-                </div>
+        <div class="col-md-4">
+            <!-- Object type form control -->
+            <div class="form-group">
+                <label class="control-label" for="accessionNo">Accession No.</label>
+                <input class="form-control" type="text" name="accessionNo" placeholder="Top left of card">
+            </div>
 
-                <div class="form-group">
-                    <label class="control-label" for="specimenNo">Specimen No</label>
-                    <input class="form-control" type="text" name="specimenNo" placeholder="Left of card">
-                </div>
+            <div class="form-group">
+                <label class="control-label" for="specimenNo">Specimen No</label>
+                <input class="form-control" type="text" name="specimenNo" placeholder="Left of card">
+            </div>
 
-                 <div class="form-group">
-                    <label class="control-label" for="fieldNo">Field No</label>
-                    <input class="form-control" type="text" name="fieldNo" placeholder="Left of card">
-                </div>
+            <div class="form-group">
+                <label class="control-label" for="fieldNo">Field No</label>
+                <input class="form-control" type="text" name="fieldNo" placeholder="Left of card">
+            </div>
 
-                <div class="form-group">
-                    <label class="control-label" for="negativeNo">Negative No</label>
-                    <input class="form-control" type="text" name="negativeNo" placeholder="Left of card">
-                </div>
-                <div class="form-group">
+            <div class="form-group">
+                <label class="control-label" for="negativeNo">Negative No</label>
+                <input class="form-control" type="text" name="negativeNo" placeholder="Left of card">
+            </div>
+            <div class="form-group">
                 <label class="control-label" for="receivedFrom">Received From</label>
                 <input class="form-control" type="text" name="receivedFrom" placeholder="Center of Card">
             </div>
 
-            </div>
-
+        </div>
 
     </div>
-    <div id="questions" class="col-md-12"><!-- Start of Question and Submission DIV (column) -->
 
-        <!-- If the user clicks this button, the saved answer will be value="yes"-->
-        <form id="transcription" role="form">
 
-            <div class="col-md-4">
-                <!-- Object type form control -->
-                <div class="form-group">
-                    <label class="control-label" for="accessionNo">Accession No.</label>
-                    <input class="form-control" type="text" name="accessionNo" placeholder="Top left of card">
-                </div>
+        <div class="col-md-6">
 
-                <div class="form-group">
-                    <label class="control-label" for="specimenNo">Specimen No</label>
-                    <input class="form-control" type="text" name="specimenNo" placeholder="Left of card">
-                </div>
-
-                 <div class="form-group">
-                    <label class="control-label" for="fieldNo">Field No</label>
-                    <input class="form-control" type="text" name="fieldNo" placeholder="Left of card">
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label" for="negativeNo">Negative No</label>
-                    <input class="form-control" type="text" name="negativeNo" placeholder="Left of card">
-                </div>
-                <div class="form-group">
-                <label class="control-label" for="receivedFrom">Received From</label>
-                <input class="form-control" type="text" name="receivedFrom" placeholder="Center of Card">
-            </div>
-
-            </div>
-
-            <div class="col-md-4">
-
-             <div class="form-group">
+            <div class="form-group">
                 <label class="control-label" for="collectedBy">Collected By</label>
                 <input class="form-control" type="text" name="collectedBy" placeholder="Center of card">
             </div>
 
-             <div class="form-group">
+            <div class="form-group">
                 <label class="control-label" for="collectedDate">Date</label>
                 <input class="form-control" type="text" name="collectedDate" placeholder="Center of card">
             </div>
 
-             <div class="form-group">
+            <div class="form-group">
                 <label class="control-label" for="locality">Locality</label>
                 <input class="form-control" type="text" name="locality" placeholder="Center of card">
             </div>
 
-             <div class="form-group">
+            <div class="form-group">
                 <label class="control-label" for="culture">Culture</label>
                 <input class="form-control" type="text" name="culture" placeholder="Center of card">
             </div>
 
-             <div class="form-group">
+            <div class="form-group">
                 <label class="control-label" for="period">Period</label>
                 <input class="form-control" type="text" name="period" placeholder="Center of card">
             </div>
-            </div>
+        </div>
 
 
-            <div class="col-md-4">
+        <div class="col-md-6">
 
 
-             <div class="form-group">
+            <div class="form-group">
                 <label class="control-label" for="object">Object</label>
                 <textarea class="form-control" rows="6" name="object" placeholder="Center of card"></textarea>
             </div>
 
-             <div class="form-group">
+            <div class="form-group">
                 <label class="control-label" for="specimenNo">Specimen No</label>
                 <input class="form-control" type="text" name="specimenNo" placeholder="Center of card">
             </div>
 
-             <div class="form-group">
+            <div class="form-group">
                 <label class="radio-inline" for="acquisition">Gift <input class="radio" type="radio" name="acquistion"  value="gift"></label>
 
 
-                 <label class="radio-inline" for="acquisition">Purchase <input class="radio" type="radio" name="acquistion"  value="purchase"></label>
+                <label class="radio-inline" for="acquisition">Purchase <input class="radio" type="radio" name="acquistion"  value="purchase"></label>
 
 
-                 <label class="radio-inline" for="acquisition">Exchange <input class="radio" type="radio" name="acquistion"  value="exchange"></label>
+                <label class="radio-inline" for="acquisition">Exchange <input class="radio" type="radio" name="acquistion"  value="exchange"></label>
 
             </div>
 
-             <div class="form-group">
+            <div class="form-group">
                 <label class="control-label" for="dateReceived">Date Recieved</label>
                 <input class="form-control" type="text" name="dateReceived" placeholder="Center of card">
             </div>
 
 
-            </div>
+        </div>
 
-            <div class="col-md-12">
+        <div class="col-md-12">
 
             <!-- Transcriber's comments -->
             <div class="form-group">
@@ -240,41 +213,41 @@
                 <textarea class="form-control" rows="5"  name="other" placeholder="Add here your comments, if you have any."></textarea>
             </div>
 
-            </div>
+        </div>
 
 
 
-        
-        </form>
 
-        <button class="btn btn-info btn-answer" value='Yes'>Submit the transcription</button>
-            
-	<!-- Feedback items for the user -->
-        <p>
-            You are working now on task: <span id="task-id" class="label label-warning">#</span>
-        </p>
-        <p>
-            You have completed: <span id="done" class="label label-info"></span> tasks from
+    </form>
+
+    <button class="btn btn-info btn-answer" value='Yes'>Submit the transcription</button>
+
+    <!-- Feedback items for the user -->
+    <p>
+        You are working now on task: <span id="task-id" class="label label-warning">#</span>
+    </p>
+    <p>
+        You have completed: <span id="done" class="label label-info"></span> tasks from
         <!-- Progress bar for the user -->
         <span id="total" class="label label-inverse"></span></p>
-        <div class="progress progress-striped">
-            <div id="progress" rel="tooltip" title="#" class="progress-bar" role="progressbar" style="width: 0%;"></div>
-        </div>
-	<!-- End of feedback row -->
-
+    <div class="progress progress-striped">
+        <div id="progress" rel="tooltip" title="#" class="progress-bar" role="progressbar" style="width: 0%;"></div>
     </div>
-    <!-- End of Question and Submission DIV (column) -->
-    
-    <!-- The column holding the open layers div --> 
-    
+    <!-- End of feedback row -->
+
+</div>
+<!-- End of Question and Submission DIV (column) -->
+
+<!-- The column holding the open layers div -->
+
 
 
 </div><!-- End of Skeleton Row -->
 
 <!-- Modal start -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-dialog">
+        <div class="modal-content">
 
             <div class="modal-header">
                 <h3 class="lead">Denver Museum of Nature & Science Anthropology Catalog Cards tutorial</h3>
@@ -283,7 +256,7 @@
             <div id="0" class="modal-body" style="display:none">
 
                 <p>
-                     When you participate, the platform will load a scanned index card from the Denver Museum of Nature & Science (DMNS) Anthopology Department
+                    When you participate, the platform will load a scanned index card from the Denver Museum of Nature & Science (DMNS) Anthopology Department
                     (stored on the MicroPasts <a href="https://www.flickr.com/photos/micropasts/albums/72157669446657984">Flickr</a> stream).
                     Once the image has been loaded, you will be asked to transcribe the contents of each
                     card. Some of the fields are no longer needed, for example, "Former Catalog No" and "Storage or Display location." Only enter the information that is asked for in the fields below the image.
@@ -304,22 +277,22 @@
 
             <div id="1" class="modal-body" style="display:none">
 
-            	<p>
-            	Sometimes you might notice that there is some variability in the style of the index cards and
-            	occasionally you might get a card that looks quite different. In such cases, please try your best
-            	to fill in the requisite fields and note in the Transcriber's Comments field that you found this difficult for that
-            	particular card. As we continue drawer-by-drawer through the catalog, we will look to modify the
-            	input fields in response to your suggestions.
-            	</p>
+                <p>
+                    Sometimes you might notice that there is some variability in the style of the index cards and
+                    occasionally you might get a card that looks quite different. In such cases, please try your best
+                    to fill in the requisite fields and note in the Transcriber's Comments field that you found this difficult for that
+                    particular card. As we continue drawer-by-drawer through the catalog, we will look to modify the
+                    input fields in response to your suggestions.
+                </p>
 
             </div>
 
-           <div id="2" class="modal-body" style="display:none">
-              <p>
-                To find out how the project is progressing, suggest changes to this application or
-                propose new research ideas based what you have transcribed, please have a look at
-                our <a href="http://community.micropasts.org" title="Community forum">community forum</a>.
-              </p>
+            <div id="2" class="modal-body" style="display:none">
+                <p>
+                    To find out how the project is progressing, suggest changes to this application or
+                    propose new research ideas based what you have transcribed, please have a look at
+                    our <a href="http://community.micropasts.org" title="Community forum">community forum</a>.
+                </p>
 
             </div>
 
@@ -328,10 +301,10 @@
                 <a id="nextBtn" href="#" onclick="showStep('next')" class="btn btn-success">Next</a>
                 <a id="startContrib" href="#" class="btn btn-primary" style="display:none"><i class="glyphicon glyphicon-thumbs-up"></i> Let's start!</a>
             </div>
-      </div>
-  </div>
+        </div>
+    </div>
 </div>
-<!-- Modal end --> 
+<!-- Modal end -->
 <script>
     var step = -1;
     function showStep(action) {
@@ -361,7 +334,7 @@
 </script>
 
 
-<!-- The modernizer script --> 
+<!-- The modernizer script -->
 
 <script>
 // Quick fix for IE8
@@ -370,7 +343,7 @@ Modernizr.load({
   nope: '/static/js/vendor/json2.min.js'
 });
 </script>
-<!-- The main pybossa functions --> 
+<!-- The main pybossa functions -->
 <script>
 function loadUserProgress() {
     pybossa.userProgress('DenverAnthro').done(function(data){
